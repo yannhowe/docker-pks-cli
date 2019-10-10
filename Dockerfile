@@ -8,4 +8,4 @@ RUN  \
     apt-get update && \
     apt install pks
 
-ENTRYPOINT ["pks"]
+ENTRYPOINT ["/bin/sh"]
