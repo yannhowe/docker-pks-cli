@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER Kwan Yann Howe (yannhowe@gmail.com)
 # Based on https://github.com/jhunt/containers-boshrelease/blob/master/jumpbox/Dockerfile
 
-ARG kubectl_version=1.17.2
+ARG kubectl_version=1.15.5
 ARG docker_compose_version=1.25.4
 ARG pks_version=1.6.1
 ARG helm_version=3.1.1
