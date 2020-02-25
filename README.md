@@ -1,8 +1,11 @@
 # PKS Cli Dockerized
-Dockerized the PKS CLI from [Stark & Wayne's](https://starkandwayne.com/) [Homebrew Tap & APT Repository](https://github.com/starkandwayne/homebrew-cf)
+Dockerized the PKS CLI, based on https://github.com/jhunt/containers-boshrelease/blob/master/jumpbox/Dockerfile
 
 ## Usage
-Run shell from inside container in an interactive session
+Run CLI from inside container
 ```
-docker run -it yannhowe/pks
+docker run yannhowe/docker-pks-cli pks
+docker run yannhowe/docker-pks-cli helm
+docker run yannhowe/docker-pks-cli kubectl
+docker run yannhowe/docker-pks-cli docker-compose
 ```
