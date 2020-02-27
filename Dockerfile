@@ -6,6 +6,7 @@ ARG kubectl_version=1.15.5
 ARG docker_compose_version=1.25.4
 ARG pks_version=1.6.1
 ARG helm_version=3.1.1
+ARG velero_version=1.2.0
 
 COPY ./pks_cli/pks-linux-amd64-1.6.1 /usr/local/bin/pks
 RUN apt-get update \
@@ -34,6 +35,12 @@ RUN  echo "Installing 'kubectl' v${kubectl_version}" \
 &&   tar -zxvf helm-v${helm_version}-linux-amd64.tar.gz \
 &&   chmod 0755 ./linux-amd64/helm \
 &&   mv ./linux-amd64/helm /usr/bin/helm \
-&&   /usr/bin/helm
+&&   /usr/bin/helm \
+&& echo "Installing 'velero' v${velero_version}" \
+&&   wget https://github.com/vmware-tanzu/velero/releases/download/v${velero_version}/velero-v${velero_version}-linux-amd64.tar.gz \
+&&   tar -zxvf velero-v${velero_version}-linux-amd64.tar.gz \
+&&   chmod 0755 ./velero-v${velero_version}-linux-amd64/velero \
+&&   mv ./velero-v${velero_version}-linux-amd64/velero /usr/bin/velero \
+&&   /usr/bin/velero
  
 CMD ["shell"]
