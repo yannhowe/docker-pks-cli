@@ -35,6 +35,7 @@ RUN  echo "Installing 'kubectl' v${kubectl_version}" \
 &&   tar -zxvf helm-v${helm_version}-linux-amd64.tar.gz \
 &&   chmod 0755 ./linux-amd64/helm \
 &&   mv ./linux-amd64/helm /usr/bin/helm \
+&&   /usr/bin/helm plugin install https://github.com/chartmuseum/helm-push \
 &&   /usr/bin/helm \
 && echo "Installing 'velero' v${velero_version}" \
 &&   wget https://github.com/vmware-tanzu/velero/releases/download/v${velero_version}/velero-v${velero_version}-linux-amd64.tar.gz \
